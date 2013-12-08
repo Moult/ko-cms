@@ -1,4 +1,3 @@
-ko-cms
-======
+# ko-cms
 
-Kohana module for a WYMEditor-based CMS which reads from Mustache files
+A Kohana module for a WYMEditor-based CMS that hooks into KOstache templates.

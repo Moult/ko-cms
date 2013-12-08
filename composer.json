@@ -1,0 +1,24 @@
+{
+        "name":        "moult/ko-cms",
+        "type":        "kohana-module",
+        "description": "A Kohana module for a WYMEditor-based CMS that hooks into KOstache templates",
+        "homepage":    "http://thinkmoult.com/",
+        "license":     "MIT",
+        "keywords":    ["kohana", "framework", "vtemplate", "cms", "mustache", "wymeditor"],
+        "authors": [
+                {
+                        "name":     "Dion Moult",
+                        "email":    "dion@thinkmoult.com",
+                        "homepage": "http://thinkmoult.com/",
+                        "role":     "developer"
+                }
+        ],
+        "support": {
+                "source":   "http://github.com/Moult/ko-cms"
+        },
+        "require": {
+                "composer/installers": "~1.0",
+                "kohana/core":         ">=3.3",
+                "php":                 ">=5.3.3"
+        }
+}
