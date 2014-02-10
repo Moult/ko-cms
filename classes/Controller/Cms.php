@@ -74,7 +74,6 @@ class Controller_CMS extends Controller_Core
 
             if ($current_mustaches >= $proposed_mustaches)
             {
-                // Do HTML Tidy preprocessing
                 $tidy_config = array(
                     'doctype' => 'omit',
                     'drop-empty-paras' => TRUE,
@@ -86,7 +85,9 @@ class Controller_CMS extends Controller_Core
                     'indent' => TRUE,
                     'indent-spaces' => 4,
                     'vertical-space' => TRUE,
-                    'new-blocklevel-tags' => 'aside',
+                    'new-blocklevel-tags' => 'article aside audio details figcaption figure footer header hgroup nav section source summary temp track video',
+                    'new-empty-tags' => 'command embed keygen source track wbr',
+                    'new-inline-tags' => 'audio canvas command datalist embed keygen mark meter output progress time video wbr',
                     'wrap' => 80
                 );
 
@@ -95,8 +96,6 @@ class Controller_CMS extends Controller_Core
                 $tidy->cleanRepair();
                 $tidy_string = (string) $tidy;
 
-                // Let's do custom preprocessing
-                // Remove blank spaces
                 $tidy_string = str_replace('&nbsp;', '', $tidy_string);
                 $tidy_string = str_replace('&#160;', '', $tidy_string);
                 $tidy_string = preg_replace('/<[a-z]* style=".*">(\{\{[#\/^].*\}\})<\/[a-z]*>/i', '${1}', $tidy_string);
